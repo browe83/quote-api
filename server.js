@@ -71,6 +71,8 @@ app.put("/api/quotes/:id", (req, res, next) => {
   }
 });
 
+app.delete("/api/quotes/:id", (req, res, next) => {});
+
 app.listen(PORT, () => {
   console.log(`Listening at port: ${PORT}`);
 });
