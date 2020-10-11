@@ -10,6 +10,11 @@ const PORT = process.env.PORT || 4001;
 app.use(express.static("public"));
 app.use(bodyParser.json());
 
+app.get("/api/quotes/random", (req, res, next) => {
+  const randQuote = getRandomElement(quotes);
+  res.send(randQuote);
+});
+
 app.get("/api/quotes", (req, res, next) => {
   if (req.query.person) {
     const author = req.query.person;
