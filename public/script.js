@@ -48,6 +48,7 @@ fetchAllButton.addEventListener("click", () => {
 fetchRandomButton.addEventListener("click", () => {
   fetch("/api/quotes/random")
     .then((response) => {
+      console.log(response);
       if (response.ok) {
         return response.json();
       } else {
@@ -55,7 +56,8 @@ fetchRandomButton.addEventListener("click", () => {
       }
     })
     .then((response) => {
-      renderQuotes([response.quote]);
+      console.log(response);
+      renderQuotes([response]);
     });
 });
 

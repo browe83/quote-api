@@ -11,7 +11,9 @@ app.use(express.static("public"));
 app.use(bodyParser.json());
 
 app.get("/api/quotes/random", (req, res, next) => {
+  console.log("random quote get request received");
   const randQuote = getRandomElement(quotes);
+  console.log(randQuote);
   res.send(randQuote);
 });
 
